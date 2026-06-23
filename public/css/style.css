@@ -1,0 +1,213 @@
+* { scroll-behavior: smooth; }
+
+body {
+    background-color: #FAF7F2;
+    color: #1A1A1A;
+    font-family: 'Inter', sans-serif;
+}
+
+/* ── Noise texture overlay ── */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: .4;
+}
+
+/* ── Gold rule ── */
+.gold-rule {
+    display: inline-block;
+    width: 60px;
+    height: 2px;
+    background: #C9B99A;
+    vertical-align: middle;
+    margin-right: 12px;
+}
+
+/* ── Hero headline ── */
+.hero-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3.5rem, 10vw, 9rem);
+    font-weight: 900;
+    line-height: .95;
+    letter-spacing: -.02em;
+    color: #1A1A1A;
+}
+
+/* ── Animated underline on hero ── */
+.hero-name span {
+    position: relative;
+    display: inline-block;
+}
+.hero-name span::after {
+    content: '';
+    position: absolute;
+    left: 0; bottom: -4px;
+    height: 3px;
+    width: 0;
+    background: #C9B99A;
+    transition: width 1.2s cubic-bezier(.4,0,.2,1) .6s;
+}
+.hero-name span.active::after { width: 100%; }
+
+/* ── Nav ── */
+nav { backdrop-filter: blur(12px); background: rgba(250,247,242,.88); }
+
+/* ── Section titles ── */
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+/* ── Cards ── */
+.service-card {
+    border: 1px solid #E5D9C8;
+    transition: transform .3s, box-shadow .3s, border-color .3s;
+}
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 60px rgba(0,0,0,.08);
+    border-color: #C9B99A;
+}
+
+/* ── Testimonial Owl ── */
+.owl-dots .owl-dot span {
+    background: #C9B99A !important;
+}
+.owl-dots .owl-dot.active span {
+    background: #1A1A1A !important;
+}
+
+/* ── Input styles ── */
+.form-input {
+    background: #fff;
+    border: 1px solid #E5D9C8;
+    border-radius: 4px;
+    padding: 14px 16px;
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+    font-size: .95rem;
+    transition: border-color .2s, box-shadow .2s;
+    outline: none;
+}
+.form-input:focus {
+    border-color: #C9B99A;
+    box-shadow: 0 0 0 3px rgba(201,185,154,.18);
+}
+.form-input::placeholder { color: #9A9A9A; }
+
+/* ── CTA Button ── */
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #1A1A1A;
+    color: #FAF7F2;
+    border: none;
+    padding: 16px 36px;
+    font-family: 'Inter', sans-serif;
+    font-size: .9rem;
+    font-weight: 600;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background .25s, transform .2s;
+}
+.btn-primary:hover { background: #3A3A3A; transform: translateY(-2px); }
+
+.btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    color: #1A1A1A;
+    border: 1.5px solid #1A1A1A;
+    padding: 14px 32px;
+    font-family: 'Inter', sans-serif;
+    font-size: .9rem;
+    font-weight: 600;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background .25s, color .25s;
+}
+.btn-outline:hover { background: #1A1A1A; color: #FAF7F2; }
+
+/* ── Project card image overlay ── */
+.project-card .overlay {
+    background: rgba(26,26,26,.82);
+    opacity: 0;
+    transition: opacity .3s;
+}
+.project-card:hover .overlay { opacity: 1; }
+
+/* ── Count-up numbers ── */
+.stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #1A1A1A;
+}
+
+/* ── Scroll reveal ── */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity .7s ease, transform .7s ease;
+}
+.reveal.visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* WhatsApp sticky */
+.wa-sticky {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    z-index: 999;
+    background: #25D366;
+    color: #fff;
+    border-radius: 50%;
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    box-shadow: 0 8px 30px rgba(37,211,102,.4);
+    transition: transform .2s;
+}
+.wa-sticky:hover { transform: scale(1.1); }
+
+/* Chart wrapper */
+.chart-wrapper { position: relative; height: 280px; }
+
+/* Divider line */
+.divider { border-color: #E5D9C8; }
+
+/* Tag pill */
+.tag-pill {
+    display: inline-block;
+    background: #F0EAE0;
+    color: #6A6A6A;
+    font-size: .75rem;
+    font-weight: 500;
+    letter-spacing: .05em;
+    padding: 4px 12px;
+    border-radius: 99px;
+    text-transform: uppercase;
+}
+
+/* Timeline */
+.timeline-dot {
+    width: 12px; height: 12px;
+    background: #C9B99A;
+    border-radius: 50%;
+    position: absolute;
+    left: -6px;
+    top: 6px;
+}

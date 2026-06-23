@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wendell Timóteo — Desenvolvedor Fullstack</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="./public/css/style.css">
+</head>
+<body>
+<nav class="fixed top-0 left-0 right-0 z-50 border-b border-beige-200">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="#" class="font-display font-bold text-xl text-ink-900 tracking-tight">
+      WT<span class="text-beige-300">.</span>dev
+    </a>
+    <div class="hidden md:flex items-center gap-8 text-sm font-medium text-ink-700">
+      <a href="#servicos" class="hover:text-beige-400 transition-colors">Serviços</a>
+      <a href="#projetos" class="hover:text-beige-400 transition-colors">Projetos</a>
+      <a href="#sobre"    class="hover:text-beige-400 transition-colors">Sobre</a>
+      <a href="#depoimentos" class="hover:text-beige-400 transition-colors">Depoimentos</a>
+      <a href="#contato"  class="hover:text-beige-400 transition-colors">Contato</a>
+    </div>
+    <a href="#contato" class="btn-primary text-xs py-3 px-6">
+      Falar comigo
+    </a>
+  </div>
+</nav>
+
+<section id="hero" class="min-h-screen flex flex-col justify-center pt-24 pb-20 px-6 relative overflow-hidden">
+  <div class="absolute right-0 top-0 w-px h-full bg-beige-200 opacity-60"></div>
+  <div class="absolute left-1/2 top-0 w-px h-full bg-beige-200 opacity-30"></div>
+
+  <div class="max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-16 items-center">
+    <div>
+      <p class="text-ink-500 text-sm tracking-widest uppercase mb-6 font-medium">
+        <span class="gold-rule"></span>Desenvolvedor Fullstack
+      </p>
+      <h1 class="hero-name mb-6">
+        <span id="heroName">Wendell<br/>Timóteo</span>
+      </h1>
+      <p class="text-ink-500 text-lg leading-relaxed max-w-md mb-10">
+        Transformo ideias em produtos digitais — de SaaS a e-commerces, portfólios a sistemas. Código limpo, entrega real.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a href="#projetos" class="btn-primary">
+          <i class="fa-solid fa-arrow-down text-xs"></i> Ver projetos
+        </a>
+        <a href="#contato" class="btn-outline">
+          Solicitar orçamento
+        </a>
+      </div>
+    </div>
+
+    <!-- Hero stats panel -->
+    <div class="bg-white border border-beige-200 p-10 relative">
+      <div class="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-beige-300 -translate-x-2 -translate-y-2"></div>
+      <div class="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-beige-300 translate-x-2 translate-y-2"></div>
+
+      <p class="text-xs tracking-widest uppercase text-ink-400 font-medium mb-8">Em números</p>
+      <div class="grid grid-cols-2 gap-8">
+        <div>
+          <div class="stat-num" data-target="40">0</div>
+          <p class="text-ink-500 text-sm mt-1">Projetos entregues</p>
+        </div>
+        <div>
+          <div class="stat-num" data-target="3">0</div>
+          <p class="text-ink-500 text-sm mt-1">SaaS ativos</p>
+        </div>
+        <div>
+          <div class="stat-num" data-target="98">0</div>
+          <p class="text-ink-500 text-sm mt-1">% satisfação</p>
+        </div>
+        <div>
+          <div class="stat-num" data-target="5">0</div>
+          <p class="text-ink-500 text-sm mt-1">Anos de experiência</p>
+        </div>
+      </div>
+
+      <hr class="divider my-8"/>
+
+      <div class="chart-wrapper">
+        <canvas id="heroChart"></canvas>
+      </div>
+      <p class="text-xs text-ink-400 mt-3 text-center tracking-wide uppercase">Projetos por categoria</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     SERVIÇOS
+═══════════════════════════════════════ -->
+<section id="servicos" class="py-24 px-6 bg-white">
+  <div class="max-w-6xl mx-auto">
+    <p class="text-ink-500 text-sm tracking-widest uppercase mb-3 font-medium reveal">
+      <span class="gold-rule"></span>O que ofereço
+    </p>
+    <h2 class="section-title text-4xl md:text-5xl mb-16 reveal">Soluções sob medida</h2>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Card 1 -->
+      <div class="service-card bg-beige-50 p-8 reveal">
+        <div class="w-12 h-12 bg-ink-900 flex items-center justify-center mb-6">
+          <i class="fa-solid fa-layer-group text-white text-lg"></i>
+        </div>
+        <h3 class="font-display font-bold text-xl mb-3">SaaS</h3>
+        <p class="text-ink-500 text-sm leading-relaxed">
+          Plataformas web escaláveis como o <strong>Gestão Otimizada</strong> — sistemas completos prontos para o mercado.
+        </p>
+        <div class="mt-6 pt-6 border-t border-beige-200">
+          <span class="tag-pill">Produto pronto</span>
+          <span class="tag-pill mt-2">White-label</span>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="service-card bg-beige-50 p-8 reveal" style="transition-delay:.1s">
+        <div class="w-12 h-12 bg-ink-900 flex items-center justify-center mb-6">
+          <i class="fa-solid fa-briefcase text-white text-lg"></i>
+        </div>
+        <h3 class="font-display font-bold text-xl mb-3">Portfólios Profissionais</h3>
+        <p class="text-ink-500 text-sm leading-relaxed">
+          Sites elegantes que posicionam sua marca pessoal — design único, rápido e com e-commerce integrado.
+        </p>
+        <div class="mt-6 pt-6 border-t border-beige-200">
+          <span class="tag-pill">Design exclusivo</span>
+          <span class="tag-pill mt-2">E-commerce</span>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="service-card bg-beige-50 p-8 reveal" style="transition-delay:.2s">
+        <div class="w-12 h-12 bg-ink-900 flex items-center justify-center mb-6">
+          <i class="fa-solid fa-cart-shopping text-white text-lg"></i>
+        </div>
+        <h3 class="font-display font-bold text-xl mb-3">E-commerces</h3>
+        <p class="text-ink-500 text-sm leading-relaxed">
+          Lojas virtuais robustas — do catálogo ao checkout — com pagamento, estoque e painel administrativo.
+        </p>
+        <div class="mt-6 pt-6 border-t border-beige-200">
+          <span class="tag-pill">Pagamento online</span>
+          <span class="tag-pill mt-2">Painel admin</span>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="service-card bg-beige-50 p-8 reveal" style="transition-delay:.3s">
+        <div class="w-12 h-12 bg-ink-900 flex items-center justify-center mb-6">
+          <i class="fa-solid fa-code text-white text-lg"></i>
+        </div>
+        <h3 class="font-display font-bold text-xl mb-3">Sistemas Web</h3>
+        <p class="text-ink-500 text-sm leading-relaxed">
+          APIs, integrações, dashboards e automações — fullstack do banco de dados à interface do usuário.
+        </p>
+        <div class="mt-6 pt-6 border-t border-beige-200">
+          <span class="tag-pill">API REST</span>
+          <span class="tag-pill mt-2">Fullstack</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Destaque Gestão Otimizada -->
+    <div class="mt-16 bg-ink-900 p-10 md:p-14 flex flex-col md:flex-row items-center gap-10 reveal">
+      <div class="flex-1">
+        <span class="tag-pill bg-beige-300 text-ink-900 mb-4 inline-block">SaaS em produção</span>
+        <h3 class="font-display font-bold text-3xl text-white mb-4">Gestão Otimizada</h3>
+        <p class="text-beige-200 leading-relaxed max-w-lg">
+          Sistema de gestão completo para pequenas e médias empresas. Controle financeiro, clientes, estoque e relatórios em uma única plataforma acessível.
+        </p>
+        <div class="flex flex-wrap gap-3 mt-6">
+          <span class="tag-pill bg-beige-400/20 text-beige-300">Financeiro</span>
+          <span class="tag-pill bg-beige-400/20 text-beige-300">CRM</span>
+          <span class="tag-pill bg-beige-400/20 text-beige-300">Relatórios</span>
+          <span class="tag-pill bg-beige-400/20 text-beige-300">Estoque</span>
+        </div>
+      </div>
+      <a href="#contato" class="btn-primary bg-beige-300 text-ink-900 hover:bg-beige-400 whitespace-nowrap">
+        Conhecer o sistema <i class="fa-solid fa-arrow-right text-xs"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     PROJETOS
+═══════════════════════════════════════ -->
+<section id="projetos" class="py-24 px-6 bg-beige-50">
+  <div class="max-w-6xl mx-auto">
+    <p class="text-ink-500 text-sm tracking-widest uppercase mb-3 font-medium reveal">
+      <span class="gold-rule"></span>Portfólio
+    </p>
+    <h2 class="section-title text-4xl md:text-5xl mb-4 reveal">Projetos selecionados</h2>
+    <p class="text-ink-500 mb-16 reveal max-w-xl">Uma amostra do que já foi construído — cada projeto com desafio único e resultado real.</p>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Project 1 -->
+      <div class="project-card bg-white border border-beige-200 overflow-hidden reveal group cursor-pointer">
+        <div class="h-52 bg-ink-900 relative flex items-center justify-center overflow-hidden">
+          <div class="text-beige-300 opacity-10 text-9xl font-display font-black absolute">01</div>
+          <i class="fa-solid fa-boxes-stacked text-beige-300 text-5xl relative z-10"></i>
+          <div class="overlay absolute inset-0 flex items-center justify-center">
+            <span class="text-white font-medium text-sm tracking-widest uppercase border border-white px-6 py-3">Ver projeto</span>
+          </div>
+        </div>
+        <div class="p-6">
+          <span class="tag-pill mb-3 inline-block">SaaS</span>
+          <h4 class="font-display font-bold text-lg mb-2">Gestão Otimizada</h4>
+          <p class="text-ink-500 text-sm leading-relaxed">Plataforma SaaS de gestão empresarial com módulo financeiro, CRM e relatórios automatizados.</p>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card bg-white border border-beige-200 overflow-hidden reveal group cursor-pointer" style="transition-delay:.1s">
+        <div class="h-52 bg-beige-200 relative flex items-center justify-center overflow-hidden">
+          <div class="text-beige-300 opacity-40 text-9xl font-display font-black absolute">02</div>
+          <i class="fa-solid fa-scissors text-ink-900 text-5xl relative z-10 opacity-60"></i>
+          <div class="overlay absolute inset-0 flex items-center justify-center">
+            <span class="text-white font-medium text-sm tracking-widest uppercase border border-white px-6 py-3">Ver projeto</span>
+          </div>
+        </div>
+        <div class="p-6">
+          <span class="tag-pill mb-3 inline-block">Portfólio</span>
+          <h4 class="font-display font-bold text-lg mb-2">Studio BarberShop</h4>
+          <p class="text-ink-500 text-sm leading-relaxed">Site institucional com agendamento online, galeria de serviços e identidade visual cinematográfica.</p>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-card bg-white border border-beige-200 overflow-hidden reveal group cursor-pointer" style="transition-delay:.2s">
+        <div class="h-52 bg-ink-700 relative flex items-center justify-center overflow-hidden">
+          <div class="text-beige-300 opacity-10 text-9xl font-display font-black absolute">03</div>
+          <i class="fa-solid fa-store text-beige-300 text-5xl relative z-10"></i>
+          <div class="overlay absolute inset-0 flex items-center justify-center">
+            <span class="text-white font-medium text-sm tracking-widest uppercase border border-white px-6 py-3">Ver projeto</span>
+          </div>
+        </div>
+        <div class="p-6">
+          <span class="tag-pill mb-3 inline-block">E-commerce</span>
+          <h4 class="font-display font-bold text-lg mb-2">WT Company Store</h4>
+          <p class="text-ink-500 text-sm leading-relaxed">Loja virtual completa com catálogo, carrinho, PIX integrado e painel de pedidos em tempo real.</p>
+        </div>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="project-card bg-white border border-beige-200 overflow-hidden reveal group cursor-pointer">
+        <div class="h-52 bg-beige-100 relative flex items-center justify-center overflow-hidden">
+          <div class="text-beige-300 opacity-40 text-9xl font-display font-black absolute">04</div>
+          <i class="fa-solid fa-music text-ink-900 text-5xl relative z-10 opacity-60"></i>
+          <div class="overlay absolute inset-0 flex items-center justify-center">
+            <span class="text-white font-medium text-sm tracking-widest uppercase border border-white px-6 py-3">Ver projeto</span>
+          </div>
+        </div>
+        <div class="p-6">
+          <span class="tag-pill mb-3 inline-block">Marketplace</span>
+          <h4 class="font-display font-bold text-lg mb-2">Mini Marketplace Musical</h4>
+          <p class="text-ink-500 text-sm leading-relaxed">Marketplace integrado ao TikTok com pagamento via PIX, gestão de produtos e pedidos via API.</p>
+        </div>
+      </div>
+
+      <!-- Project 5 -->
+      <div class="project-card bg-white border border-beige-200 overflow-hidden reveal group cursor-pointer" style="transition-delay:.1s">
+        <div class="h-52 bg-ink-900 relative flex items-center justify-center overflow-hidden">
+          <div class="text-beige-300 opacity-10 text-9xl font-display font-black absolute">05</div>
+          <i class="fa-solid fa-chart-line text-beige-300 text-5xl relative z-10"></i>
+          <div class="overlay absolute inset-0 flex items-center justify-center">
+            <span class="text-white font-medium text-sm tracking-widest uppercase border border-white px-6 py-3">Ver projeto</span>
+          </div>
+        </div>
+        <div class="p-6">
+          <span class="tag-pill mb-3 inline-block">Dashboard</span>
+          <h4 class="font-display font-bold text-lg mb-2">Painel Financeiro</h4>
+          <p class="text-ink-500 text-sm leading-relaxed">Dashboard administrativo com gráficos em tempo real, exportação de relatórios e controle de caixa.</p>
+        </div>
+      </div>
+
+      <!-- Project 6 -->
+      <div class="project-card bg-white border border-beige-200 overflow-hidden reveal group cursor-pointer" style="transition-delay:.2s">
+        <div class="h-52 bg-beige-200 relative flex items-center justify-center overflow-hidden">
+          <div class="text-beige-300 opacity-40 text-9xl font-display font-black absolute">06</div>
+          <i class="fa-solid fa-globe text-ink-900 text-5xl relative z-10 opacity-60"></i>
+          <div class="overlay absolute inset-0 flex items-center justify-center">
+            <span class="text-white font-medium text-sm tracking-widest uppercase border border-white px-6 py-3">Ver projeto</span>
+          </div>
+        </div>
+        <div class="p-6">
+          <span class="tag-pill mb-3 inline-block">Landing Page</span>
+          <h4 class="font-display font-bold text-lg mb-2">Bio-Link + Portfólio</h4>
+          <p class="text-ink-500 text-sm leading-relaxed">Mini-site de bio-link com portfólio integrado, analytics e links personalizáveis para redes sociais.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     SOBRE / SKILLS
+═══════════════════════════════════════ -->
+<section id="sobre" class="py-24 px-6 bg-white">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-center">
+    <div class="reveal">
+      <p class="text-ink-500 text-sm tracking-widest uppercase mb-3 font-medium">
+        <span class="gold-rule"></span>Sobre mim
+      </p>
+      <h2 class="section-title text-4xl md:text-5xl mb-8">Código que resolve,<br/>não só que funciona.</h2>
+
+      <p class="text-ink-600 leading-relaxed mb-5">
+        Sou <strong>Wendell Timóteo</strong>, desenvolvedor fullstack apaixonado por criar soluções digitais que geram resultado real. Desde sistemas SaaS a e-commerces, entrego produtos que escalam.
+      </p>
+      <p class="text-ink-500 leading-relaxed mb-10">
+        Trabalho com stack moderna — Node.js, React, bancos relacionais e em nuvem — e tenho obsessão por performance, UX limpa e código que a equipe consegue manter.
+      </p>
+
+      <!-- Timeline -->
+      <div class="border-l-2 border-beige-200 pl-8 space-y-8">
+        <div class="relative">
+          <span class="timeline-dot"></span>
+          <p class="text-xs text-ink-400 uppercase tracking-widest mb-1">Presente</p>
+          <h4 class="font-semibold text-ink-900">Freelancer Fullstack</h4>
+          <p class="text-ink-500 text-sm">SaaS, portfólios, e-commerces e sistemas sob demanda.</p>
+        </div>
+        <div class="relative">
+          <span class="timeline-dot"></span>
+          <p class="text-xs text-ink-400 uppercase tracking-widest mb-1">2022</p>
+          <h4 class="font-semibold text-ink-900">Lançamento: Gestão Otimizada</h4>
+          <p class="text-ink-500 text-sm">Primeiro SaaS próprio em produção com clientes ativos.</p>
+        </div>
+        <div class="relative">
+          <span class="timeline-dot"></span>
+          <p class="text-xs text-ink-400 uppercase tracking-widest mb-1">2019</p>
+          <h4 class="font-semibold text-ink-900">Início no desenvolvimento web</h4>
+          <p class="text-ink-500 text-sm">Primeiros projetos freelance, suporte técnico e sistemas internos.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tech skills chart -->
+    <div class="reveal" style="transition-delay:.2s">
+      <div class="bg-beige-50 border border-beige-200 p-8 mb-6">
+        <p class="text-xs tracking-widest uppercase text-ink-400 font-medium mb-6">Stack principal</p>
+        <div class="chart-wrapper" style="height:320px">
+          <canvas id="skillsChart"></canvas>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-3 gap-3">
+        <div class="bg-beige-50 border border-beige-200 p-4 text-center">
+          <i class="fa-brands fa-node-js text-2xl text-ink-700 mb-2 block"></i>
+          <p class="text-xs text-ink-500 font-medium">Node.js</p>
+        </div>
+        <div class="bg-beige-50 border border-beige-200 p-4 text-center">
+          <i class="fa-brands fa-react text-2xl text-ink-700 mb-2 block"></i>
+          <p class="text-xs text-ink-500 font-medium">React</p>
+        </div>
+        <div class="bg-beige-50 border border-beige-200 p-4 text-center">
+          <i class="fa-brands fa-js text-2xl text-ink-700 mb-2 block"></i>
+          <p class="text-xs text-ink-500 font-medium">JavaScript</p>
+        </div>
+        <div class="bg-beige-50 border border-beige-200 p-4 text-center">
+          <i class="fa-solid fa-database text-2xl text-ink-700 mb-2 block"></i>
+          <p class="text-xs text-ink-500 font-medium">PostgreSQL</p>
+        </div>
+        <div class="bg-beige-50 border border-beige-200 p-4 text-center">
+          <i class="fa-brands fa-css3-alt text-2xl text-ink-700 mb-2 block"></i>
+          <p class="text-xs text-ink-500 font-medium">Tailwind</p>
+        </div>
+        <div class="bg-beige-50 border border-beige-200 p-4 text-center">
+          <i class="fa-brands fa-docker text-2xl text-ink-700 mb-2 block"></i>
+          <p class="text-xs text-ink-500 font-medium">Docker</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     DEPOIMENTOS (OWL CAROUSEL)
+═══════════════════════════════════════ -->
+<section id="depoimentos" class="py-24 px-6 bg-beige-50">
+  <div class="max-w-6xl mx-auto">
+    <p class="text-ink-500 text-sm tracking-widest uppercase mb-3 font-medium reveal">
+      <span class="gold-rule"></span>Depoimentos
+    </p>
+    <h2 class="section-title text-4xl md:text-5xl mb-16 reveal">O que dizem os clientes</h2>
+
+    <div class="owl-carousel owl-theme reveal" id="testimonialsCarousel">
+      <!-- Testemunho 1 -->
+      <div class="bg-white border border-beige-200 p-10 mx-2">
+        <div class="text-4xl text-beige-300 font-display font-black mb-6">"</div>
+        <p class="text-ink-700 text-lg leading-relaxed mb-8 italic font-display">
+          O Wendell entendeu exatamente o que eu precisava desde o primeiro briefing. O resultado foi um site incrível que triplicou meus leads em dois meses.
+        </p>
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 bg-ink-900 flex items-center justify-center text-white font-bold font-display text-lg">M</div>
+          <div>
+            <p class="font-semibold text-ink-900">Marcos Oliveira</p>
+            <p class="text-ink-400 text-sm">Proprietário — Studio MO</p>
+          </div>
+          <div class="ml-auto flex text-beige-300 text-sm">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testemunho 2 -->
+      <div class="bg-white border border-beige-200 p-10 mx-2">
+        <div class="text-4xl text-beige-300 font-display font-black mb-6">"</div>
+        <p class="text-ink-700 text-lg leading-relaxed mb-8 italic font-display">
+          Meu e-commerce saiu do zero ao ar em 3 semanas. Profissional impecável, comunicação direta e entregou além do combinado.
+        </p>
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 bg-beige-300 flex items-center justify-center text-ink-900 font-bold font-display text-lg">A</div>
+          <div>
+            <p class="font-semibold text-ink-900">Ana Paula Rocha</p>
+            <p class="text-ink-400 text-sm">CEO — W&S Elegância</p>
+          </div>
+          <div class="ml-auto flex text-beige-300 text-sm">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testemunho 3 -->
+      <div class="bg-white border border-beige-200 p-10 mx-2">
+        <div class="text-4xl text-beige-300 font-display font-black mb-6">"</div>
+        <p class="text-ink-700 text-lg leading-relaxed mb-8 italic font-display">
+          O Gestão Otimizada transformou nossa operação. Antes controlávamos tudo em planilha. Hoje temos visibilidade total do negócio em tempo real.
+        </p>
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 bg-ink-700 flex items-center justify-center text-white font-bold font-display text-lg">R</div>
+          <div>
+            <p class="font-semibold text-ink-900">Ricardo Santos</p>
+            <p class="text-ink-400 text-sm">Gestor — Distribuidora RS</p>
+          </div>
+          <div class="ml-auto flex text-beige-300 text-sm">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testemunho 4 -->
+      <div class="bg-white border border-beige-200 p-10 mx-2">
+        <div class="text-4xl text-beige-300 font-display font-black mb-6">"</div>
+        <p class="text-ink-700 text-lg leading-relaxed mb-8 italic font-display">
+          Pedi um portfólio e recebi uma identidade digital completa. Minha presença online nunca foi tão profissional. Recomendo sem hesitar.
+        </p>
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 bg-beige-200 flex items-center justify-center text-ink-900 font-bold font-display text-lg">J</div>
+          <div>
+            <p class="font-semibold text-ink-900">João Victor</p>
+            <p class="text-ink-400 text-sm">Barbeiro — Studio JV</p>
+          </div>
+          <div class="ml-auto flex text-beige-300 text-sm">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     CONTATO / FORMULÁRIO
+═══════════════════════════════════════ -->
+<section id="contato" class="py-24 px-6 bg-white">
+  <div class="max-w-6xl mx-auto">
+    <p class="text-ink-500 text-sm tracking-widest uppercase mb-3 font-medium reveal">
+      <span class="gold-rule"></span>Contato
+    </p>
+    <h2 class="section-title text-4xl md:text-5xl mb-4 reveal">Vamos construir<br/>algo juntos?</h2>
+    <p class="text-ink-500 mb-16 reveal max-w-xl">Preencha o formulário abaixo e responderei em até 24h. Ou fale diretamente pelo WhatsApp.</p>
+
+    <div class="grid md:grid-cols-5 gap-16">
+      <!-- Form -->
+      <div class="md:col-span-3 reveal">
+        <div id="contactForm" class="space-y-5">
+          <div class="grid md:grid-cols-2 gap-5">
+            <div>
+              <label class="block text-xs font-semibold text-ink-700 uppercase tracking-widest mb-2">Nome *</label>
+              <input type="text" id="name" class="form-input" placeholder="Seu nome completo" required/>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-ink-700 uppercase tracking-widest mb-2">E-mail *</label>
+              <input type="email" id="email" class="form-input" placeholder="seu@email.com" required/>
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-5">
+            <div>
+              <label class="block text-xs font-semibold text-ink-700 uppercase tracking-widest mb-2">WhatsApp</label>
+              <input type="tel" id="phone" class="form-input" placeholder="(11) 99999-9999"/>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-ink-700 uppercase tracking-widest mb-2">Tipo de projeto *</label>
+              <select id="projectType" class="form-input appearance-none">
+                <option value="" disabled selected>Selecione...</option>
+                <option>SaaS / Sistema web</option>
+                <option>Portfólio profissional</option>
+                <option>E-commerce</option>
+                <option>Landing page</option>
+                <option>Consultoria técnica</option>
+                <option>Outro</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-ink-700 uppercase tracking-widest mb-2">Orçamento estimado</label>
+            <select id="budget" class="form-input appearance-none">
+              <option value="" disabled selected>Faixa de investimento</option>
+              <option>Até R$ 1.500</option>
+              <option>R$ 1.500 – R$ 3.000</option>
+              <option>R$ 3.000 – R$ 6.000</option>
+              <option>R$ 6.000 – R$ 15.000</option>
+              <option>Acima de R$ 15.000</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-ink-700 uppercase tracking-widest mb-2">Mensagem *</label>
+            <textarea id="message" rows="5" class="form-input resize-none" placeholder="Conte um pouco sobre seu projeto, objetivos e prazo desejado..."></textarea>
+          </div>
+
+          <div class="flex flex-wrap gap-4 pt-2">
+            <button onclick="sendEmail()" class="btn-primary">
+              <i class="fa-solid fa-paper-plane text-xs"></i> Enviar mensagem
+            </button>
+            <a href="https://wa.me/5511986695168?text=Olá%20Wendell!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto." target="_blank" class="btn-outline">
+              <i class="fa-brands fa-whatsapp"></i> WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Info sidebar -->
+      <div class="md:col-span-2 reveal" style="transition-delay:.2s">
+        <div class="space-y-8">
+          <div>
+            <p class="text-xs tracking-widest uppercase text-ink-400 font-medium mb-4">Informações de contato</p>
+            <div class="space-y-4">
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 bg-beige-100 flex items-center justify-center flex-shrink-0">
+                  <i class="fa-brands fa-whatsapp text-ink-700"></i>
+                </div>
+                <div>
+                  <p class="text-xs text-ink-400 uppercase tracking-wide">WhatsApp</p>
+                  <a href="https://wa.me/5511986695168" class="font-medium text-ink-900 hover:text-beige-400 transition-colors">(11) 98669-5168</a>
+                </div>
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 bg-beige-100 flex items-center justify-center flex-shrink-0">
+                  <i class="fa-solid fa-envelope text-ink-700"></i>
+                </div>
+                <div>
+                  <p class="text-xs text-ink-400 uppercase tracking-wide">E-mail</p>
+                  <p class="font-medium text-ink-900">contato@wendelldev.com.br</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 bg-beige-100 flex items-center justify-center flex-shrink-0">
+                  <i class="fa-solid fa-location-dot text-ink-700"></i>
+                </div>
+                <div>
+                  <p class="text-xs text-ink-400 uppercase tracking-wide">Localização</p>
+                  <p class="font-medium text-ink-900">São Paulo, SP — Brasil</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <hr class="divider"/>
+
+          <div>
+            <p class="text-xs tracking-widest uppercase text-ink-400 font-medium mb-4">Horário de atendimento</p>
+            <p class="text-ink-600 text-sm leading-relaxed">Segunda a sexta: <strong>17h – 22h</strong><br/>Sábados: <strong>08h – 14h</strong></p>
+          </div>
+
+          <hr class="divider"/>
+
+          <div>
+            <p class="text-xs tracking-widest uppercase text-ink-400 font-medium mb-4">Redes sociais</p>
+            <div class="flex gap-3">
+              <a href="#" class="w-10 h-10 bg-beige-100 hover:bg-ink-900 hover:text-white flex items-center justify-center transition-colors text-ink-700">
+                <i class="fa-brands fa-linkedin-in text-sm"></i>
+              </a>
+              <a href="#" class="w-10 h-10 bg-beige-100 hover:bg-ink-900 hover:text-white flex items-center justify-center transition-colors text-ink-700">
+                <i class="fa-brands fa-instagram text-sm"></i>
+              </a>
+              <a href="#" class="w-10 h-10 bg-beige-100 hover:bg-ink-900 hover:text-white flex items-center justify-center transition-colors text-ink-700">
+                <i class="fa-brands fa-github text-sm"></i>
+              </a>
+              <a href="#" class="w-10 h-10 bg-beige-100 hover:bg-ink-900 hover:text-white flex items-center justify-center transition-colors text-ink-700">
+                <i class="fa-brands fa-tiktok text-sm"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════ -->
+<footer class="bg-ink-900 py-14 px-6">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+    <div>
+      <p class="font-display font-bold text-2xl text-white mb-1">WT<span class="text-beige-300">.</span>dev</p>
+      <p class="text-beige-300 text-sm">Desenvolvedor Fullstack · São Paulo, Brasil</p>
+    </div>
+    <div class="flex flex-wrap gap-8 text-sm text-beige-300">
+      <a href="#servicos" class="hover:text-white transition-colors">Serviços</a>
+      <a href="#projetos" class="hover:text-white transition-colors">Projetos</a>
+      <a href="#sobre"    class="hover:text-white transition-colors">Sobre</a>
+      <a href="#contato"  class="hover:text-white transition-colors">Contato</a>
+    </div>
+    <p class="text-ink-500 text-xs">&copy; 2025 Wendell Timóteo. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<!-- WhatsApp Sticky -->
+<a href="https://wa.me/5511986695168?text=Olá%20Wendell!%20Vim%20pelo%20seu%20site." target="_blank" class="wa-sticky" title="Falar no WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<!-- ── JS LIBS ── -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="./public/js/script.js"></script>
+<script>
+  // ── EmailJS Init ──
+  // INSTRUÇÕES: Crie conta em https://www.emailjs.com
+  // 1. Crie um Email Service (Gmail, Outlook, etc.)
+  // 2. Crie um Email Template com as variáveis: {{from_name}}, {{from_email}}, {{phone}}, {{project_type}}, {{budget}}, {{message}}
+  // 3. Substitua os valores abaixo:
+  
+</script>
+</body>
+</html>
